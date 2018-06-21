@@ -1,0 +1,107 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+/*Three Column Layout*/
+
+.column {
+  float: left;
+}
+
+/* End Three Column Layout*/
+body {
+  background-image: url(images/thumb-1920-568756.jpg);
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+p {
+  text-align: center;
+  color: white;
+  font-family: Helvetica, Trebuchet MS, sans-serif;
+  font-size: 25;
+}
+#scoreArea {
+  width: 20%;
+  height: 80%;
+  vertical-align: bottom;
+}
+#boardArea {
+  background-color: black;
+  position: relative;
+  width: 60%;
+  height: 80%;
+}
+#header{
+  width: 100%;
+  height: 20vh;
+}
+#title{
+  color: silver;
+  font-size: 600%;
+  font-family: "urw annual", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#TribecArea {
+  background-image: url(images/ferralHost.jpg);
+  background-size: cover;
+  width: 20%;
+  height: 65vh;
+  min-height: 80%;
+  margin-left: auto;
+  margin-right: 0%;
+}
+.tile {
+  background-color: rebeccapurple;
+  width: 32%;
+  height: 100%;
+  margin: .65%;
+}
+.row{
+  display: flex;
+  justify-content: center;
+  background-color: blue;
+  width: auto;
+  height: 31.8%;
+  border: 5px solid black;
+}
+.catScreen{
+  border-bottom: 10px solid black;
+}
+.plaayerNameTextBox{
+
+}
+.playersScore{
+
+}
+.value{
+  background-color: blue;
+  border: none;
+  color: gold;
+  font-size: 40px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
