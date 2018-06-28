@@ -10,6 +10,9 @@ class JeopardyQuestion extends Component{
             
         }
     }
+    _handleClick() {
+        this.setState({currentState:"selected"})
+    }
 
     render () {
         let buttonContent;
@@ -28,11 +31,6 @@ class JeopardyQuestion extends Component{
         {buttonContent}
         </div>
         );
-    }
-    _handleClick() {
-        this.setState({
-            currentState:"selected"
-        });
     }
 }
 export default JeopardyQuestion;

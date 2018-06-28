@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import JeopardyCategory from './JeopardyCategory.js';
 import NameForm from './NameForm';
 
+
 class App extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {playerName: 'Please enter your name'};
+    }
+
+    nameCallBack (enteredName) {
+        this.setState({ playerName: {enteredName} });
+    }
   render() {
 
     return (
@@ -15,7 +23,7 @@ class App extends Component {
         <div id="content">
             <div id="scoreArea" className="column edge">
                 <div className="playerNameTextBox">
-                    {}
+                    <p>{this.state.playerName}</p>
                 </div>
                 <div className="playersScore">
                     <p>The player's score</p>
@@ -24,7 +32,7 @@ class App extends Component {
                     
                 </div>
                 <div className="SubmitButton">
-                    <NameForm/>
+                    <NameForm onNameInput = {this.nameCallBack}/>
                 </div>
             </div>
             <div id="boardArea" className="column">

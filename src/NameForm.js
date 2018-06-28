@@ -3,10 +3,12 @@ import React, { Component } from 'react';
 class NameForm extends Component {
     constructor(props) {
       super(props);
-      this.state = {value: ''};
-  
+      this.state = {value: 'Please enter your name'}; 
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
+    }
+    placeName = () => {
+      this.props.onNameInput(this.props.value);
     }
   
     handleChange(event) {
@@ -15,7 +17,9 @@ class NameForm extends Component {
   
     handleSubmit(event) {
       alert('A name was submitted: ' + this.state.value);
+      this.placeName();
       event.preventDefault();
+      
     }
   
     render() {
@@ -30,4 +34,7 @@ class NameForm extends Component {
       );
     }
   }
+  
   export default NameForm;
+
+ 
