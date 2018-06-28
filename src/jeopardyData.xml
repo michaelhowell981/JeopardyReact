@@ -1,0 +1,39 @@
+<Categories>
+	<Category name ="swords">
+		<Question value="200">
+			<questionText>
+				<possibleQuestion>what is a sailor?</possibleQuestion>
+				<possibleQuestion>what is a sailor man?</possibleQuestion>
+			</questionText>
+			<answer>Popeye is this type of man.</answer>
+		</Question>
+		<Question value="400">
+			<questionText>what is a sail?</questionText>
+			<answer>The Object that propels a Sailboat through the water.</answer>
+		</Question>
+	</Category>
+	<Category name ="drinks">
+		<Question value="200">
+			<questionText>what is a martini?</questionText>
+			<answer>The beverage that James Bond drinks.</answer>
+		</Question>
+		<Question value="400">
+			<questionText>what is a screwdriver?</questionText>
+			<answer>This drink is made with orange juice, and named after a tool.</answer>
+		</Question>
+	</Category>
+	<Category name ="Anime">
+		<Question value="200">
+			<questionText>who is goku?</questionText>
+			<answer>The hero of Dragonball with godlike growth in power!</answer>
+		</Question>
+		<Question value="400">
+			<questionText>what is bleach?</questionText>
+			<answer>The heros of this anime battle hollows to free thier spirts and send them to a peaceful afterlife.</answer>
+		</Question>
+		<Question value="600">
+			<questionText>who is naruto?</questionText>
+			<answer>The hero who constantly fights to become the Hokage!</answer>
+		</Question>
+	</Category>
+</Categories>

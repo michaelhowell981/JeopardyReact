@@ -3,6 +3,8 @@ import './App.css';
 import JeopardyCategory from './JeopardyCategory.js';
 import NameForm from './NameForm';
 
+let jeopardyData = require('./jeopardyData.json')
+
 
 class App extends Component {
     constructor(props) {
@@ -37,7 +39,7 @@ class App extends Component {
             </div>
             <div id="boardArea" className="column">
                 
-                <JeopardyCategory categoryName="S'words"/>
+                <JeopardyCategory categoryName={jeopardyData.Categories.Category[0].name}/>
                 <JeopardyCategory categoryName="Anime"/>
                 <JeopardyCategory categoryName="Drinks"/>
 

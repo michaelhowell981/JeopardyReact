@@ -1,0 +1,61 @@
+{
+    "Categories": {
+      "Category": [
+        {
+          "name": "swords",
+          "Question": [
+            {
+              "value": "200",
+              "questionText": {
+                "possibleQuestion": [
+                  "what is a sailor?",
+                  "what is a sailor man?"
+                ]
+              },
+              "answer": "Popeye is this type of man."
+            },
+            {
+              "value": "400",
+              "questionText": "what is a sail?",
+              "answer": "The Object that propels a Sailboat through the water."
+            }
+          ]
+        },
+        {
+          "name": "drinks",
+          "Question": [
+            {
+              "value": "200",
+              "questionText": "what is a martini?",
+              "answer": "The beverage that James Bond drinks."
+            },
+            {
+              "value": "400",
+              "questionText": "what is a screwdriver?",
+              "answer": "This drink is made with orange juice, and named after a tool."
+            }
+          ]
+        },
+        {
+          "name": "Anime",
+          "Question": [
+            {
+              "value": "200",
+              "questionText": "who is goku?",
+              "answer": "The hero of Dragonball with godlike growth in power!"
+            },
+            {
+              "value": "400",
+              "questionText": "what is bleach?",
+              "answer": "The heros of this anime battle hollows to free thier spirts and send them to a peaceful afterlife."
+            },
+            {
+              "value": "600",
+              "questionText": "who is naruto?",
+              "answer": "The hero who constantly fights to become the Hokage!"
+            }
+          ]
+        }
+      ]
+    }
+  }
