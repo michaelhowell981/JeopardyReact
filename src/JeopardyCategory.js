@@ -5,8 +5,8 @@ class JeopardyCategory extends Component{
     
     constructor () {
         super();
-
         this.state = {
+            
             questions: [
                 {id:1, value:"200", answer:"SWEET"},
                 {id:2, value:"400", answer:"SWEET"},
@@ -14,6 +14,7 @@ class JeopardyCategory extends Component{
             ]
             
         }
+        var categoryNumber = 0;
     }
 
     render () {
@@ -22,7 +23,8 @@ class JeopardyCategory extends Component{
             <div className="row catScreen">
                 <p>{this.props.categoryName}</p>
             </div>
-            {this.state.questions.map( x => <JeopardyQuestion key={x.id} value={x.value} answer={x.answer}/>)}
+        {this.props.questionData.Question.map( x => 
+        {return <JeopardyQuestion key={x.value} value={x.value} answer={x.answer}/>})}
         </div>
 
         );

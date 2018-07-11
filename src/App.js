@@ -9,7 +9,9 @@ let jeopardyData = require('./jeopardyData.json')
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {playerName: 'Please enter your name'};
+        this.state = {playerName: 'Please enter your name',
+            boardData: jeopardyData};
+        
     }
 
     nameCallBack (enteredName) {
@@ -38,12 +40,8 @@ class App extends Component {
                 </div>
             </div>
             <div id="boardArea" className="column">
-                
-                <JeopardyCategory categoryName={jeopardyData.Categories.Category[0].name}/>
-                <JeopardyCategory categoryName="Anime"/>
-                <JeopardyCategory categoryName="Drinks"/>
-
-
+                {this.state.boardData.Categories.Category.map(x => 
+                {return <JeopardyCategory categoryName={x.name} questionData={x}/>})}
             </div>
             <div id="TribecArea" className="column edge">
             
