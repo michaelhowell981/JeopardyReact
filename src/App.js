@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import JeopardyCategory from './JeopardyCategory.js';
 import NameForm from './NameForm';
+import UserInputForm from './UserInputForm';
 
 let jeopardyData = require('./jeopardyData.json')
 
@@ -9,9 +10,17 @@ let jeopardyData = require('./jeopardyData.json')
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {playerName: 'Please enter your name',
-            boardData: jeopardyData};
-        this.nameCallBack = this.nameCallBack.bind(this)
+        this.state = {
+            playerName: 'Please enter your name',
+            boardData: jeopardyData,
+            userResponse: 'Enter your response here'
+        };
+        this.nameCallBack = this.nameCallBack.bind(this);
+        this.userInputCall = this.userInputCall.bind(this);
+    }
+
+    userInputCall (userInput) {
+        this.setState({userResponse: userInput });
     }
 
     nameCallBack (enteredName) {
@@ -42,6 +51,7 @@ class App extends Component {
             <div id="boardArea" className="column">
                 {this.state.boardData.Categories.Category.map(x => 
                 {return <JeopardyCategory  categoryName={x.name} questionData={x}/>})}
+                <UserInputForm onUserInput = {this.userInputCall}/>
             </div>
             <div id="TribecArea" className="column edge">
             
