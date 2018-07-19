@@ -14,7 +14,6 @@ class JeopardyCategory extends Component{
             ]
             
         }
-        var categoryNumber = 0;
     }
 
     render () {

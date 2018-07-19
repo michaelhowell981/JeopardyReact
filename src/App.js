@@ -11,11 +11,11 @@ class App extends Component {
         super(props);
         this.state = {playerName: 'Please enter your name',
             boardData: jeopardyData};
-        
+        this.nameCallBack = this.nameCallBack.bind(this)
     }
 
     nameCallBack (enteredName) {
-        this.setState({ playerName: {enteredName} });
+        this.setState({ playerName: enteredName });
     }
   render() {
 
@@ -41,7 +41,7 @@ class App extends Component {
             </div>
             <div id="boardArea" className="column">
                 {this.state.boardData.Categories.Category.map(x => 
-                {return <JeopardyCategory categoryName={x.name} questionData={x}/>})}
+                {return <JeopardyCategory  categoryName={x.name} questionData={x}/>})}
             </div>
             <div id="TribecArea" className="column edge">
             

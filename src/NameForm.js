@@ -6,9 +6,10 @@ class NameForm extends Component {
       this.state = {value: 'Please enter your name'}; 
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
+      this.placeName = this.placeName.bind(this);
     }
     placeName = () => {
-      this.props.onNameInput(this.props.value);
+      this.props.onNameInput(this.state.value);
     }
   
     handleChange(event) {
@@ -16,7 +17,6 @@ class NameForm extends Component {
     }
   
     handleSubmit(event) {
-      alert('A name was submitted: ' + this.state.value);
       this.placeName();
       event.preventDefault();
       
