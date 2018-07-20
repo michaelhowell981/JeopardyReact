@@ -2,16 +2,25 @@ import React, { Component } from 'react';
 
 class JeopardyQuestion extends Component{
 
-    constructor () {
-        super();
+    constructor (props) {
+        super(props);
 
-        this.state = {
-            currentState: "value"
-            
-        }
+        this.state = {currentState: "value"}
+        this.pointsChoice = this.pointsChoice.bind(this);
+    }
+
+    correctQuestionText = () => {
+        this.props.onQuestionTextCall(this.props.questionText)
+    }
+
+    pointsChoice = () => {
+        this.props.onPointsCall(this.props.value);
     }
     _handleClick() {
         this.setState({currentState:"selected"})
+        this.pointsChoice();
+        this.correctQuestionText();
+
     }
 
     render () {

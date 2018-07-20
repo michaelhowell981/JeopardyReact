@@ -3,6 +3,8 @@ import './App.css';
 import JeopardyCategory from './JeopardyCategory.js';
 import NameForm from './NameForm';
 import UserInputForm from './UserInputForm';
+import JeopardyQuestion from './JeopardyQuestion.js';
+
 
 let jeopardyData = require('./jeopardyData.json')
 
@@ -13,10 +15,22 @@ class App extends Component {
         this.state = {
             playerName: 'Please enter your name',
             boardData: jeopardyData,
-            userResponse: 'Enter your response here'
+            userResponse: 'Enter your response here',
+            selectedPoints: 0,
+            currentQuestionText: ''
         };
         this.nameCallBack = this.nameCallBack.bind(this);
         this.userInputCall = this.userInputCall.bind(this);
+        this.pointsCall = this.pointsCall.bind(this);
+        this.questionTextCall = this.questionTextCall.bind(this);
+    }
+
+    questionTextCall(correctQuestion){
+        this.setState({currentQuestionText: correctQuestion});
+    }
+
+    pointsCall(pointsChoice){
+        this.setState({selectedPoints: pointsChoice});
     }
 
     userInputCall (userInput) {
@@ -39,6 +53,8 @@ class App extends Component {
                     <p>{this.state.playerName}</p>
                 </div>
                 <div className="playersScore">
+                    <p>Current point value Chosen</p>
+                    <p>{this.state.selectedPoints}</p>
                     <p>The player's score</p>
                 </div>
                 <div className="answerBox">
@@ -50,7 +66,8 @@ class App extends Component {
             </div>
             <div id="boardArea" className="column">
                 {this.state.boardData.Categories.Category.map(x => 
-                {return <JeopardyCategory  categoryName={x.name} questionData={x}/>})}
+                {return <JeopardyCategory  onPointsCall={this.pointsCall} onQuestionTextCall={this.questionTextCall} 
+                categoryName={x.name} questionData={x}/>})}
                 <UserInputForm onUserInput = {this.userInputCall}/>
             </div>
             <div id="TribecArea" className="column edge">

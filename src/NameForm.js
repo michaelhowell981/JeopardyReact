@@ -8,6 +8,7 @@ class NameForm extends Component {
       this.handleSubmit = this.handleSubmit.bind(this);
       this.placeName = this.placeName.bind(this);
     }
+    
     placeName = () => {
       this.props.onNameInput(this.state.value);
     }
@@ -26,7 +27,6 @@ class NameForm extends Component {
       return (
         <form onSubmit={this.handleSubmit}>
           <label>
-            Name:
             <input type="text" value={this.state.value} onChange={this.handleChange} />
           </label>
           <input type="submit" value="Submit" />

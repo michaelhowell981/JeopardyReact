@@ -2,17 +2,11 @@
     "Categories": {
       "Category": [
         {
-          "id": "1",
           "name": "swords",
           "Question": [
             {
               "value": "200",
-              "questionText": {
-                "possibleQuestion": [
-                  "what is a sailor?",
-                  "what is a sailor man?"
-                ]
-              },
+              "questionText": "what is a sailor man?",
               "answer": "Popeye is this type of man."
             },
             {
