@@ -71,6 +71,7 @@ class App extends Component {
                 <div className="playersScore">
                     <p>Current point value Chosen</p>
                     <p>{this.state.selectedPoints}</p>
+                    <p>Current point Total</p>
                     <p>{this.state.playerScore}</p>
                 </div>
                 <div className="answerBox">
