@@ -18,8 +18,8 @@ class NameForm extends Component {
     }
   
     handleSubmit(event) {
-      this.placeName();
       event.preventDefault();
+      this.placeName()
       
     }
   

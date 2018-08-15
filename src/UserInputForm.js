@@ -7,19 +7,23 @@ class UserInputForm extends Component {
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
       this.userInput = this.userInput.bind(this);
+      this.comparison = this.comparison.bind(this);
+    }
+    comparison = () => {
+      this.props.onCompare(this.state.value)
     }
     userInput = () => {
-      this.props.onUserInput(this.state.value);
+      this.props.onUserInput(this.state.value)
     }
   
     handleChange(event) {
-      this.setState({value: event.target.value});
+      this.setState({value: event.target.value})
     }
   
     handleSubmit(event) {
+      event.preventDefault()
       this.userInput();
-      event.preventDefault();
-      
+      this.comparison();
     }
   
     render() {

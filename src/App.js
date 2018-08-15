@@ -3,8 +3,6 @@ import './App.css';
 import JeopardyCategory from './JeopardyCategory.js';
 import NameForm from './NameForm';
 import UserInputForm from './UserInputForm';
-import JeopardyQuestion from './JeopardyQuestion.js';
-
 
 let jeopardyData = require('./jeopardyData.json')
 
@@ -17,12 +15,27 @@ class App extends Component {
             boardData: jeopardyData,
             userResponse: 'Enter your response here',
             selectedPoints: 0,
-            currentQuestionText: ''
+            currentQuestionText: '',
+            compareResponse: 'Lets Play!',
+            playerScore: 0,
         };
         this.nameCallBack = this.nameCallBack.bind(this);
         this.userInputCall = this.userInputCall.bind(this);
         this.pointsCall = this.pointsCall.bind(this);
         this.questionTextCall = this.questionTextCall.bind(this);
+        this.compareResult = this.compareResult.bind(this)
+
+    }
+
+    compareResult(wordValue){
+        if (wordValue === this.state.currentQuestionText){
+            this.setState({ compareResponse: 'Well done!'});
+            this.setState({ playerScore: this.state.playerScore + parseInt(this.state.selectedPoints)});
+            
+        }else {
+            this.setState({ compareResponse: 'Sorry that is not the Question we needed.' });
+            this.setState({ playerScore: this.state.playerScore - parseInt(this.state.selectedPoints)});
+        }
     }
 
     questionTextCall(correctQuestion){
@@ -41,6 +54,9 @@ class App extends Component {
         this.setState({ playerName: enteredName });
     }
   render() {
+    
+
+
 
     return (
       <div className="App">
@@ -55,7 +71,7 @@ class App extends Component {
                 <div className="playersScore">
                     <p>Current point value Chosen</p>
                     <p>{this.state.selectedPoints}</p>
-                    <p>The player's score</p>
+                    <p>{this.state.playerScore}</p>
                 </div>
                 <div className="answerBox">
                     
@@ -68,7 +84,9 @@ class App extends Component {
                 {this.state.boardData.Categories.Category.map(x => 
                 {return <JeopardyCategory  onPointsCall={this.pointsCall} onQuestionTextCall={this.questionTextCall} 
                 categoryName={x.name} questionData={x}/>})}
-                <UserInputForm onUserInput = {this.userInputCall}/>
+                <p>{this.state.compareResponse}</p>
+                <UserInputForm onUserInput = {this.userInputCall} onCompare = {this.compareResult} 
+                currentQuestionText = {this.currentQuestionText}/>
             </div>
             <div id="TribecArea" className="column edge">
             
