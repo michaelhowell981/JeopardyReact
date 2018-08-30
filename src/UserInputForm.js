@@ -9,6 +9,9 @@ class UserInputForm extends Component {
       this.userInput = this.userInput.bind(this);
       this.comparison = this.comparison.bind(this);
     }
+    buttonsActiveCall(){
+      this.props.onButtonsActiveCall(true);
+    }
     comparison = () => {
       this.props.onCompare(this.state.value)
     }
@@ -21,12 +24,18 @@ class UserInputForm extends Component {
     }
   
     handleSubmit(event) {
-      event.preventDefault()
+      event.preventDefault();
       this.userInput();
       this.comparison();
+      this.buttonsActiveCall();
+    }
+
+    nullClick(event){
+      event.preventDefault();
     }
   
     render() {
+      if(this.props.buttonsActive === false){
       return (
         <form onSubmit={this.handleSubmit}>
           <label>
@@ -35,6 +44,16 @@ class UserInputForm extends Component {
           <input type="submit" value="Submit" />
         </form>
       );
+    }else if(this.props.buttonsActive === true){
+      return (
+        <form onSubmit={this.nullClick}>
+          <label>
+            <input type="text" value={this.state.value} onChange={this.handleChange} />
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
+      )
+    }
     }
   }
   

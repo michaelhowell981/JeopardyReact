@@ -54,7 +54,7 @@ p {
   background-color: black;
   position: relative;
   width: 60%;
-  height: 80%;
+  min-height: 35vw;
 }
 #header{
   width: 100%;
@@ -85,7 +85,7 @@ p {
   justify-content: center;
   background-color: blue;
   width: auto;
-  height: 31.8%;
+  height: 7vw;
   border: 5px solid black;
 }
 .catScreen{

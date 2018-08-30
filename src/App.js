@@ -18,13 +18,16 @@ class App extends Component {
             currentQuestionText: '',
             compareResponse: 'Lets Play!',
             playerScore: 0,
+            currentAnswerText: 'well',
+            buttonsActive: true,
         };
         this.nameCallBack = this.nameCallBack.bind(this);
         this.userInputCall = this.userInputCall.bind(this);
         this.pointsCall = this.pointsCall.bind(this);
         this.questionTextCall = this.questionTextCall.bind(this);
-        this.compareResult = this.compareResult.bind(this)
-
+        this.compareResult = this.compareResult.bind(this);
+        this.answerTextCall = this.answerTextCall.bind(this);
+        this.buttonsActiveCall = this.buttonsActiveCall.bind(this);
     }
 
     compareResult(wordValue){
@@ -36,6 +39,14 @@ class App extends Component {
             this.setState({ compareResponse: 'Sorry that is not the Question we needed.' });
             this.setState({ playerScore: this.state.playerScore - parseInt(this.state.selectedPoints)});
         }
+    }
+    
+    buttonsActiveCall(clickable){
+        this.setState({buttonsActive: clickable});
+    }
+
+    answerTextCall(answerText){
+        this.setState({currentAnswerText: answerText});
     }
 
     questionTextCall(correctQuestion){
@@ -84,10 +95,11 @@ class App extends Component {
             <div id="boardArea" className="column">
                 {this.state.boardData.Categories.Category.map(x => 
                 {return <JeopardyCategory  onPointsCall={this.pointsCall} onQuestionTextCall={this.questionTextCall} 
-                categoryName={x.name} questionData={x}/>})}
+                categoryName={x.name} questionData={x} onAnswerTextCall={this.answerTextCall} currentAnswerText={this.currentAnswerText}
+                onButtonsActiveCall = {this.buttonsActiveCall} buttonsActive= {this.state.buttonsActive}/>})}
                 <p>{this.state.compareResponse}</p>
-                <UserInputForm onUserInput = {this.userInputCall} onCompare = {this.compareResult} 
-                currentQuestionText = {this.currentQuestionText}/>
+                <UserInputForm onUserInput = {this.userInputCall} onCompare = {this.compareResult} buttonsActive= {this.state.buttonsActive}
+                currentQuestionText = {this.currentQuestionText} onButtonsActiveCall = {this.buttonsActiveCall}/>
             </div>
             <div id="TribecArea" className="column edge">
             

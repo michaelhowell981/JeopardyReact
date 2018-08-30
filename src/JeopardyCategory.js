@@ -12,7 +12,9 @@ class JeopardyCategory extends Component{
             </div>
         {this.props.questionData.Question.map( x => 
         {return <JeopardyQuestion onPointsCall={this.props.onPointsCall} onQuestionTextCall={this.props.onQuestionTextCall}
-        key={x.value} value={x.value} answer={x.answer} questionText={x.questionText}/>})}
+        key={x.value} value={x.value} answer={x.answer} questionText={x.questionText} onAnswerTextCall={this.props.onAnswerTextCall}
+         currentAnswerText={this.props.currentAnswerText} onButtonsActiveCall = {this.props.onButtonsActiveCall} 
+         buttonsActive= {this.props.buttonsActive}/>})}
         </div>
 
         );
